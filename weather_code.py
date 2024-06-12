@@ -1,11 +1,11 @@
 import requests
 
-api_key = open('.....', 'r').read()
+api_key = 'ec0fdd298254fb963e76fbbb35bc51a4'
 
 while True:
     location = input("Location: ")
 
-    result = requests.get(f'.....')
+    result = requests.get(f'http://api.openweathermap.org/data/2.5/weather?q={location}&units=metric&appid={api_key}')
     if result.json()['cod'] == '404':
         print("Invalid location!")
         continue
